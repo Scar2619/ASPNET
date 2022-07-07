@@ -24,3 +24,15 @@
 <div style="display: block">
     <a href="/Product/UpdateProduct/@Model.ProductID">Update this Product</a>
 </div>
+
+<!--creates an alert that asks user if they are sure-->
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteProduct", "Product", "Post"))
+    {
+        <input type="hidden" asp-for="ProductID" value="@Model.ProductID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+    }
+</div>
+<!--ends alert for user about if they are sure-->
+
