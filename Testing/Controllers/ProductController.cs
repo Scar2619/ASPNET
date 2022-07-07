@@ -24,6 +24,13 @@ namespace Testing.Controllers
             var products = repo.GetAllProducts();
             return View(products);
         }
+
+        //views one product from table based on ID, the product passed into view method will refer to the Model we work with inside viewproduct
+        public IActionResult ViewProduct(int id)
+        {
+            var product = repo.GetProduct(id);
+            return View(product);
+        }
     }
 }
 
